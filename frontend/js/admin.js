@@ -189,7 +189,7 @@ function displayDonationsTable(donations) {
         row.innerHTML = `
             <td>${donation.id}</td>
             <td>${donation.username}</td>
-            <td>$${donation.amount}</td>
+            <td>${donation.amount}</td>
             <td>${donation.description || 'N/A'}</td>
             <td>${formatDate(donation.date)}</td>
             <td>

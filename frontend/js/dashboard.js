@@ -138,7 +138,7 @@ function displayDonations(donations) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${donation.username}</td>
-            <td>$${donation.amount}</td>
+            <td>${donation.amount}</td>
             <td>${donation.description || 'Sin descripción'}</td>
             <td>${formatDate(donation.date)}</td>
         `;
