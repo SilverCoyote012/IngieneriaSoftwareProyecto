@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 // Rate limiting para prevenir ataques de fuerza bruta
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutos
-  max: 100 // límite de 100 requests por IP
+  max: 1000 // límite de 100 requests por IP
 });
 app.use('/api/', limiter);
 
