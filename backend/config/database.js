@@ -30,7 +30,7 @@ async function initDatabase() {
       CREATE TABLE IF NOT EXISTS donations_received (
         id SERIAL PRIMARY KEY,
         user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-        amount DECIMAL(10, 2),
+        amount INTEGER,
         description TEXT,
         date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )

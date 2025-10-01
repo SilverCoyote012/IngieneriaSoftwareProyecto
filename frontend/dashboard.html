@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-brand">
-            <h2>🤝 Asociación Solidaria</h2>
+            <h2>Crumbs</h2>
         </div>
         <div class="nav-user">
             <span>Bienvenido, <strong id="userName"></strong></span>
@@ -20,10 +20,10 @@
     <div class="dashboard-container">
         <aside class="sidebar">
             <ul class="menu">
-                <li><a href="#" onclick="showSection('donate')" class="active">💰 Hacer Donación</a></li>
-                <li><a href="#" onclick="showSection('request')">🙏 Solicitar Ayuda</a></li>
-                <li><a href="#" onclick="showSection('reports')">📊 Ver Reportes</a></li>
-                <li><a href="#" onclick="showSection('contact')">📞 Contacto</a></li>
+                <li><a href="#" onclick="showSection('donate')" class="active">Hacer Donación</a></li>
+                <li><a href="#" onclick="showSection('request')">Solicitar Ayuda</a></li>
+                <li><a href="#" onclick="showSection('reports')">Ver Reportes</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contacto</a></li>
             </ul>
         </aside>
 
@@ -35,13 +35,13 @@
                 
                 <form id="donationForm" class="form-card">
                     <div class="form-group">
-                        <label for="amount">Cantidad ($)</label>
-                        <input type="number" id="amount" min="1" step="0.01" required>
+                        <label for="amount">Cantidad</label>
+                        <input type="number" id="amount" min="1" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="description">Descripción (opcional)</label>
-                        <textarea id="description" rows="3"></textarea>
+                        <label for="description">Descripción</label>
+                        <textarea id="description" rows="3" required></textarea>
                     </div>
                     
                     <button type="submit" class="btn btn-primary">Donar</button>
@@ -134,28 +134,15 @@
                 
                 <div class="contact-info">
                     <div class="info-card">
-                        <h3>📧 Correo Electrónico</h3>
-                        <p>info@asociacionsolidaria.org</p>
-                        <p>donaciones@asociacionsolidaria.org</p>
+                        <h3>Correo Electrónico</h3>
+                        <p>info@crumbs.org</p>
+                        <p>donaciones@crumbs.org</p>
                     </div>
 
                     <div class="info-card">
-                        <h3>📱 Teléfono</h3>
-                        <p>+52 (55) 1234-5678</p>
-                        <p>WhatsApp: +52 (55) 8765-4321</p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>📍 Dirección</h3>
-                        <p>Calle Solidaridad #123</p>
-                        <p>Col. Centro, Ciudad de México</p>
-                        <p>C.P. 06000</p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>🕐 Horario de Atención</h3>
-                        <p>Lunes a Viernes: 9:00 - 18:00</p>
-                        <p>Sábados: 9:00 - 14:00</p>
+                        <h3>Teléfono</h3>
+                        <p>+52 81 1234-5678</p>
+                        <p>WhatsApp: +52 81 8765-4321</p>
                     </div>
                 </div>
             </section>
