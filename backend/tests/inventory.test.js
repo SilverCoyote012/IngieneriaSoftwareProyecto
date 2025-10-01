@@ -133,7 +133,7 @@ describe('Inventory Routes', () => {
         });
 
       expect(response.status).toBe(200);
-      expect(response.body.item.quantity).toBe('20');
+      expect(response.body.item.quantity).toBe(20);
     });
 
     it('should return 404 for non-existent item', async () => {

@@ -44,7 +44,7 @@ describe('Donation Routes', () => {
         });
 
       expect(response.status).toBe(201);
-      expect(response.body.donation.amount).toBe('100');
+      expect(response.body.donation.amount).toBe(100);
     });
 
     it('should reject donation with invalid amount', async () => {
