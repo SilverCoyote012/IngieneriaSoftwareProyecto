@@ -1,0 +1,39 @@
+{
+  "name": "donation-app",
+  "version": "1.0.0",
+  "description": "Sistema de gestión de donaciones con autenticación JWT",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "keywords": ["donations", "jwt", "express"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "nodemon": "^3.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": ["/node_modules/"],
+    "collectCoverageFrom": [
+      "backend/**/*.js",
+      "!backend/server.js",
+      "!backend/config/database.js"
+    ]
+  }
+}

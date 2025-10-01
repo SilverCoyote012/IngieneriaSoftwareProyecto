@@ -1,0 +1,41 @@
+# Dependencias
+node_modules/
+package-lock.json
+
+# Variables de entorno
+.env
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Cobertura de pruebas
+coverage/
+.nyc_output/
+
+# Base de datos local
+*.db
+*.sqlite
+*.sqlite3
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+
+# Temporal
+tmp/
+temp/

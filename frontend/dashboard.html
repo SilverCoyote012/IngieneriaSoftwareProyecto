@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Usuario</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h2>🤝 Asociación Solidaria</h2>
+        </div>
+        <div class="nav-user">
+            <span>Bienvenido, <strong id="userName"></strong></span>
+            <button onclick="logout()" class="btn btn-secondary">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <ul class="menu">
+                <li><a href="#" onclick="showSection('donate')" class="active">💰 Hacer Donación</a></li>
+                <li><a href="#" onclick="showSection('request')">🙏 Solicitar Ayuda</a></li>
+                <li><a href="#" onclick="showSection('reports')">📊 Ver Reportes</a></li>
+                <li><a href="#" onclick="showSection('contact')">📞 Contacto</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <!-- Sección: Hacer Donación -->
+            <section id="donate" class="content-section active">
+                <h2>Realizar una Donación</h2>
+                <p>Gracias por tu generosidad. Tu apoyo ayuda a quienes más lo necesitan.</p>
+                
+                <form id="donationForm" class="form-card">
+                    <div class="form-group">
+                        <label for="amount">Cantidad ($)</label>
+                        <input type="number" id="amount" min="1" step="0.01" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Descripción (opcional)</label>
+                        <textarea id="description" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Donar</button>
+                </form>
+
+                <div id="donationMessage" class="message"></div>
+            </section>
+
+            <!-- Sección: Solicitar Donación -->
+            <section id="request" class="content-section">
+                <h2>Solicitar Ayuda</h2>
+                <p>Si necesitas apoyo, completa el siguiente formulario.</p>
+                
+                <form id="requestForm" class="form-card">
+                    <div class="form-group">
+                        <label for="itemType">Tipo de artículo</label>
+                        <select id="itemType" required>
+                            <option value="">Selecciona...</option>
+                            <option value="ropa">Ropa</option>
+                            <option value="calzado">Calzado</option>
+                            <option value="ambos">Ambos</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Cantidad</label>
+                        <input type="number" id="quantity" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reason">Motivo de la solicitud</label>
+                        <textarea id="reason" rows="4" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                </form>
+
+                <div id="requestMessage" class="message"></div>
+            </section>
+
+            <!-- Sección: Reportes -->
+            <section id="reports" class="content-section">
+                <h2>Reportes de Donaciones</h2>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showReport('received')">Donaciones Recibidas</button>
+                    <button class="tab-btn" onclick="showReport('requests')">Solicitudes</button>
+                </div>
+
+                <div id="receivedReport" class="report-content">
+                    <h3>Donaciones Recibidas por la Asociación</h3>
+                    <div class="table-container">
+                        <table id="receivedTable">
+                            <thead>
+                                <tr>
+                                    <th>Usuario</th>
+                                    <th>Cantidad</th>
+                                    <th>Descripción</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="requestsReport" class="report-content" style="display: none;">
+                    <h3>Solicitudes de Ayuda</h3>
+                    <div class="table-container">
+                        <table id="requestsTable">
+                            <thead>
+                                <tr>
+                                    <th>Usuario</th>
+                                    <th>Tipo</th>
+                                    <th>Cantidad</th>
+                                    <th>Motivo</th>
+                                    <th>Estado</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Contacto -->
+            <section id="contact" class="content-section">
+                <h2>Información de Contacto</h2>
+                
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>📧 Correo Electrónico</h3>
+                        <p>info@asociacionsolidaria.org</p>
+                        <p>donaciones@asociacionsolidaria.org</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>📱 Teléfono</h3>
+                        <p>+52 (55) 1234-5678</p>
+                        <p>WhatsApp: +52 (55) 8765-4321</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>📍 Dirección</h3>
+                        <p>Calle Solidaridad #123</p>
+                        <p>Col. Centro, Ciudad de México</p>
+                        <p>C.P. 06000</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🕐 Horario de Atención</h3>
+                        <p>Lunes a Viernes: 9:00 - 18:00</p>
+                        <p>Sábados: 9:00 - 14:00</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
